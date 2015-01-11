@@ -3,7 +3,6 @@ package com.ranorextest.steps;
 import com.ranorextest.pageobject.ModalDialogOKCancelPage;
 import com.ranorextest.webdriver.WebDriverFactory;
 import com.ranorextest.pageobject.HomePage;
-import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;

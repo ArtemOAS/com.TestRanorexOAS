@@ -1,7 +1,6 @@
 package com.ranorextest.steps;
 
 import com.ranorextest.Category;
-import com.ranorextest.Users;
 import com.ranorextest.webdriver.WebDriverFactory;
 import com.ranorextest.pageobject.HomePage;
 import org.jbehave.core.annotations.Given;

@@ -6,6 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+/**
+ * Created by Тёма on 26.12.2014.
+ */
+
 public class WebDriverFactory {
 
     private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<WebDriver>() {
