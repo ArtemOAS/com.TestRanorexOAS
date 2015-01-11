@@ -61,7 +61,7 @@ public class MyStories extends JUnitStories {
 
     @Override
     public InjectableStepsFactory stepsFactory() {
-        return new ScanningStepsFactory(configuration(), "com.ranorextest.ranorextest.steps");
+        return new ScanningStepsFactory(configuration(), "com.ranorextest.steps");
     }
 
     @Override
