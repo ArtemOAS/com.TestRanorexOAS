@@ -16,18 +16,21 @@ public class DeleteDownloadedUserSteps {
     @Given("User opens the homepage")
     public void getUrlHome(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.getUrlHome();
     }
 
     @When("Load users")
     public void loadVIPUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.loadAllUsers();
     }
 
     @When("Remove downloaded users")
     public void chooseCategories() {
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         for (AllVIPUsers VIPAllUsers : homePage.VIPUsers()) {
             String VIPUsersName = VIPAllUsers.getVIPUsers();
             homePage.getWebElementVIPUsers(VIPUsersName).click();
@@ -38,6 +41,7 @@ public class DeleteDownloadedUserSteps {
     @Then("Users downloaded removed")
     public void userIsDelete(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("VIPs is empty", homePage.userIsDeleted.isDisplayed());
     }
 }

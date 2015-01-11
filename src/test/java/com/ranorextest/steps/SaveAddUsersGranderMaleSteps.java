@@ -21,6 +21,7 @@ public class SaveAddUsersGranderMaleSteps {
     @When("Add user with grander male")
     public void chooseCategories(@Named("firstName") String firstName, @Named("lastName") String lastName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         for (Category category: homePage.categories()){
             String categoryName = category.getСategory();
             homePage.getWebElementCategory(categoryName).click();
@@ -34,12 +35,14 @@ public class SaveAddUsersGranderMaleSteps {
     @When("Save added users with grander male")
     public void saveVIPUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.saveVIPUser();
     }
 
     @Then("Confirm the preservation of added users, grander male")
     public void confirmSaveUsers(){
         ModalDialogOKPage modalDialogOKPage = new ModalDialogOKPage(WebDriverFactory.getWebDriver());
+
         Set<String> windowId = WebDriverFactory.getWebDriver().getWindowHandles();
         Iterator<String> itererator = windowId.iterator();
         String mainWinID = itererator.next();

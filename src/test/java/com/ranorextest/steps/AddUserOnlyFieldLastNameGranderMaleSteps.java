@@ -20,24 +20,28 @@ public class AddUserOnlyFieldLastNameGranderMaleSteps {
     @When("Enter user $lastName")
     public void enterLastName(@Named("$lastName")String lastName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.enterLastName.sendKeys(lastName);
     }
 
     @When("Choose grander male")
     public void chooseFemale(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.chooseMale();
     }
 
     @When("Add user")
     public void addUser(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.addUser();
     }
 
     @When("Confirm the incorrect filling")
     public void confirmIncorrectFilling(){
         ModalDialogOKPage modalDialogOKPage = new ModalDialogOKPage(WebDriverFactory.getWebDriver());
+
         Set<String> windowId = WebDriverFactory.getWebDriver().getWindowHandles();
         Iterator<String> itererator = windowId.iterator();
         String mainWinID = itererator.next();
@@ -51,6 +55,7 @@ public class AddUserOnlyFieldLastNameGranderMaleSteps {
     @Then("The user with the completed only one field last name and grander male is not added")
     public void userIsDelete(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("Not users", homePage.userIsDeleted.isDisplayed());
     }
 }

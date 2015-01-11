@@ -15,12 +15,14 @@ public class DisconnectSteps {
     @When("Disconnect from the database")
     public void disconnect(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.disconnect();
     }
 
     @Then("Connection has been disconnected from the database")
     public void checkDisconnect(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("Disconnect",homePage.checkDisconnect.isDisplayed());
     }
 }

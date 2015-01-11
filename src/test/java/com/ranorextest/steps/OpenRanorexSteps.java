@@ -11,12 +11,14 @@ public class OpenRanorexSteps {
     @Given("User opens the homepage")
     public void givenUserOpenRanorex(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.getUrlHome();
     }
 
     @Then("The website ranorex is open")
     public void openRanorex(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("VIP Database Test Web Application", homePage.namePage.isDisplayed());
     }
     

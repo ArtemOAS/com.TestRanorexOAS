@@ -16,7 +16,6 @@ public class DeleteUserWithUsingGranderMaleSteps {
 
     @When("Delete a user with using grander male")
     public void deleteUserGranderFemale(@Named("firstName") String firstName, @Named("lastName") String lastName){
-
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 
         for (Category category: homePage.categories()){
@@ -33,6 +32,7 @@ public class DeleteUserWithUsingGranderMaleSteps {
     @Then("User with using grander male is delete")
     public void userIsDelete(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("VIPs is empty", homePage.userIsDeleted.isDisplayed());
     }
 }

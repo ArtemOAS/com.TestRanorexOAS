@@ -23,6 +23,7 @@ public class ClearTheUsersGranderFemaleSteps {
     @When("Adds a user using gender female")
     public void chooseCategories(@Named("firstName") String firstName, @Named("lastName") String lastName) {
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         for (Category category : homePage.categories()) {
             String categoryName = category.getСategory();
             homePage.getWebElementCategory(categoryName).click();
@@ -36,12 +37,14 @@ public class ClearTheUsersGranderFemaleSteps {
     @When("Clear all female users")
     public void clearAllUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.clear();
     }
 
     @Then("Users female deleted")
     public void userIsDelete(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("VIPs is empty", homePage.userIsDeleted.isDisplayed());
     }
 }

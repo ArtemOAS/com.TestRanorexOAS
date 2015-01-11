@@ -16,18 +16,21 @@ public class LoadUsersSteps {
     @Given("User opens the homepage")
     public void getUrlHome(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.getUrlHome();
     }
 
     @When("Push button 'Load'")
     public void loadAllUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.loadAllUsers();
     }
 
     @Then("Users loaded")
     public void usersLoaded(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("All users",homePage.usersLoaded.isEmpty());
     }
 }

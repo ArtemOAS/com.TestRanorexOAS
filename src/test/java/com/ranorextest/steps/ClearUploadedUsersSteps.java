@@ -15,18 +15,21 @@ public class ClearUploadedUsersSteps {
     @When("Load users")
     public void loadVIPUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.loadAllUsers();
     }
 
     @When("Clear all user uploaded")
     public void clearAllVIPUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.clear();
     }
 
     @Then("All users downloaded cleared")
     public void userIsDelete(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("VIPs is empty", homePage.userIsDeleted.isDisplayed());
     }
 }

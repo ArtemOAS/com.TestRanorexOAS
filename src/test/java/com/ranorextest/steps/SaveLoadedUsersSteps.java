@@ -19,18 +19,21 @@ public class SaveLoadedUsersSteps {
     @When("Load Users")
     public void loadVIPUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.loadAllUsers();
     }
 
     @When("Save uploaded by users")
     public void saveVIPUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.saveVIPUser();
     }
 
     @Then("Confirm saving uploaded by users")
     public void confirmSaveUsers(){
         ModalDialogOKPage modalDialogOKPage = new ModalDialogOKPage(WebDriverFactory.getWebDriver());
+
         Set<String> windowId = WebDriverFactory.getWebDriver().getWindowHandles();
         Iterator<String> itererator = windowId.iterator();
         String mainWinID = itererator.next();

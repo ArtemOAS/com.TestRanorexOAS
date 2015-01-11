@@ -19,18 +19,21 @@ public class ConfirmConnectSteps {
     @When("That would disconnect from the database, click to disconnect")
     public void disconnect(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.disconnect();
     }
 
     @When("That would connect from the database, click to connect")
     public void connect(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.connect();
     }
 
     @When("Confirm the connection to the database")
     public void confirmConnection(){
         ModalDialogOKCancelPage modalDialogOKCancelPage = new ModalDialogOKCancelPage(WebDriverFactory.getWebDriver());
+
         Set<String> windowId = WebDriverFactory.getWebDriver().getWindowHandles();
         Iterator<String> itererator = windowId.iterator();
         String mainWinID = itererator.next();
@@ -44,6 +47,7 @@ public class ConfirmConnectSteps {
     @Then("Database connection successfully")
     public void connected(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("connected",homePage.checkConnect.isDisplayed());
     }
 }

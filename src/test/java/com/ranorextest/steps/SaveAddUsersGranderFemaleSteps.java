@@ -21,12 +21,14 @@ public class SaveAddUsersGranderFemaleSteps {
     @Given("User opens the homepage")
     public void getUrlHome(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.getUrlHome();
     }
 
     @When("Add user with grander female")
     public void addUserWithGranderFemale(@Named("firstName") String firstName, @Named("lastName") String lastName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         for (Category category: homePage.categories()){
             String categoryName = category.getСategory();
             homePage.getWebElementCategory(categoryName).click();
@@ -40,12 +42,14 @@ public class SaveAddUsersGranderFemaleSteps {
     @When("Save added users with grander female")
     public void saveAddedUsers(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.saveVIPUser();
     }
 
     @Then("Confirm the preservation of added users, grander female")
     public void confirmSaveUsers(){
         ModalDialogOKPage modalDialogOKPage = new ModalDialogOKPage(WebDriverFactory.getWebDriver());
+
         Set<String> windowId = WebDriverFactory.getWebDriver().getWindowHandles();
         Iterator<String> itererator = windowId.iterator();
         String mainWinID = itererator.next();

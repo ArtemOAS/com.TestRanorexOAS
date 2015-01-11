@@ -23,12 +23,12 @@ public class AddAUserFemaleUsingTheCategoriesSteps {
     @Given("User opens the homepage")
     public void getUrlHome(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.getUrlHome();
     }
 
     @When("adds a user using gender female")
     public void chooseCategories(@Named("firstName") String firstName, @Named("lastName") String lastName){
-
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 
         for (Category category: homePage.categories()){
@@ -45,6 +45,7 @@ public class AddAUserFemaleUsingTheCategoriesSteps {
     @Then("User added with gender female")
     public void vipUserAdd(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue("registered user female", homePage.registeredUser.isDisplayed());
     }
 }

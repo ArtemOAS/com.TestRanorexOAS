@@ -22,12 +22,14 @@ public class AllCategorySteps {
     @Given("User opens the homepage")
     public void getUrlHome(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         homePage.getUrlHome();
     }
 
     @When("The presence of the categories on the site ranorex")
     public void findAllCategory(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         for (Category category: homePage.categories()){
             String categoryName = category.getСategory();
             homePage.getWebElementCategory(categoryName).click();
@@ -37,6 +39,7 @@ public class AllCategorySteps {
     @Then("There are six categories")
     public void allCategory(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
         Assert.assertTrue(homePage.categories.isEmpty());
     }
 }
