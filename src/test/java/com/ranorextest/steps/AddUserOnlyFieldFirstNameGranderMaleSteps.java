@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public class AddUserOnlyFieldFirstNameGranderMaleSteps {
 
-    @When("Enter user $firstName")
+    @When("Enter user male first name")
     public void enterFirstName(@Named("$firstName")String firstName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 
@@ -47,7 +47,6 @@ public class AddUserOnlyFieldFirstNameGranderMaleSteps {
         String newAdwinID = itererator.next();
         WebDriverFactory.getWebDriver().switchTo().window(newAdwinID);
         modalDialogOKPage.confirmIncorrectFilling();
-        WebDriverFactory.getWebDriver().close();
         WebDriverFactory.getWebDriver().switchTo().window(mainWinID);
     }
 

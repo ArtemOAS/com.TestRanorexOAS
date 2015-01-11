@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public class AddUserOnlyFieldLastNameGranderMaleSteps {
 
-    @When("Enter user $lastName")
+    @When("Enter user male last name")
     public void enterLastName(@Named("$lastName")String lastName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 

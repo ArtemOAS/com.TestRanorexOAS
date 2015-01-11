@@ -14,14 +14,14 @@ public class AddUserSteps {
 
 
     @When("Enter user first name")
-    public void enterFirstName(@Named("firstName") String firstName){
+    public void enterFirstName(@Named("$firstName") String firstName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 
         homePage.enterFirstName.sendKeys(firstName);
     }
 
     @When("Enter user last name")
-    public void enterLastName(@Named("lastName") String lastName){
+    public void enterLastName(@Named("$lastName") String lastName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 
         homePage.enterLastName.sendKeys(lastName);

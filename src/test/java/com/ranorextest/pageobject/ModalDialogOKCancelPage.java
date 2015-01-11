@@ -1,9 +1,12 @@
 package com.ranorextest.pageobject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by Тёма on 10.01.2015.
@@ -16,13 +19,15 @@ public class ModalDialogOKCancelPage {
         PageFactory.initElements(webDriver, this);
     }
 
+    ModalDialogOKCancelPage(){}
+
     @FindBy(xpath=".//*[@id='alertOKCancel']/center/button[text()='OK']")
     WebElement connectOk;
     public void connectOk(){
         connectOk.click();
     }
 
-    @FindBy(xpath=".//*[@id='alertOKCancel']/center/button[text()='Cancel']")
+    @FindBy(xpath = ".//*[@id='alertOKCancel']/center/button[text()='Cancel']")
     WebElement connectCancel;
     public void connectCancel(){
         connectCancel.click();

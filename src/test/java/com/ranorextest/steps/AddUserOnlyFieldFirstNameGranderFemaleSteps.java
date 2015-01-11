@@ -17,13 +17,7 @@ import java.util.Set;
  */
 public class AddUserOnlyFieldFirstNameGranderFemaleSteps {
 
-    @Given("User opens the homepage")
-    public void openRanorex(){
-        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
-        homePage.getUrlHome();
-    }
-
-    @When("Enter user $firstName")
+    @When("Enter user female first name")
     public void enterFirstName(@Named("$firstName")String firstName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
         homePage.enterFirstName.sendKeys(firstName);

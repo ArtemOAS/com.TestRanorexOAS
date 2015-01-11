@@ -28,6 +28,8 @@ public class HomePage {
         PageFactory.initElements(webDriver, this);
     }
 
+    HomePage(){}
+
     public void getUrlHome(){
         webDriver.get(URL_HOME);
     }
@@ -63,7 +65,7 @@ public class HomePage {
     }
 
     public WebElement getWebElementCategory(String categoryName){
-        WebElement element = webDriver.findElement(By.xpath(".//*[@id='Category']/option[contains(text(), '" + categoryName + "')]"));
+        WebElement element = (new WebDriverWait(webDriver,10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='Category']/option[contains(text(), '" + categoryName + "')]")));
         return element;
     }
 
@@ -94,9 +96,8 @@ public class HomePage {
         clear.click();
     }
 
-    WebElement disconnect;
     public void disconnect(){
-        disconnect = (new WebDriverWait(webDriver,10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='connect'][@value='Disconnect...']")));
+        WebElement disconnect = (new WebDriverWait(webDriver,40)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='connect'][@value='Disconnect...']")));
         disconnect.click();
     }
 
@@ -112,10 +113,8 @@ public class HomePage {
     @FindBy(xpath = ".//*[@id='connect'][@value='Disconnect...']")
     public WebElement checkConnect;
 
-
-    @FindBy(id = "Load")
-    WebElement loadAllUsers;
     public void loadAllUsers(){
+        WebElement loadAllUsers = (new WebDriverWait(webDriver,40)).until(ExpectedConditions.presenceOfElementLocated(By.id("Load")));
         loadAllUsers.click();
     }
 

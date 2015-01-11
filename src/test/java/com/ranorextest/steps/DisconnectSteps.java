@@ -11,6 +11,13 @@ import org.junit.Assert;
  */
 public class DisconnectSteps {
 
+    @When("That would connect from the database, click to connect")
+    public void connect(){
+        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
+        homePage.connect();
+    }
+
     @When("Disconnect from the database")
     public void disconnect(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
