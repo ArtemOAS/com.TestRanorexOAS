@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/com.TestRanorex.iml" filepath="$PROJECT_DIR$/com.TestRanorex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.TestRanorexOAS.iml" filepath="$PROJECT_DIR$/com.TestRanorexOAS.iml" />
     </modules>
   </component>
 </project>
