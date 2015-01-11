@@ -19,17 +19,14 @@ public class ModalDialogOKCancelPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    ModalDialogOKCancelPage(){}
-
     @FindBy(xpath=".//*[@id='alertOKCancel']/center/button[text()='OK']")
     WebElement connectOk;
     public void connectOk(){
         connectOk.click();
     }
 
-    @FindBy(xpath = ".//*[@id='alertOKCancel']/center/button[text()='Cancel']")
-    WebElement connectCancel;
     public void connectCancel(){
+        WebElement connectCancel = (new WebDriverWait(webDriver,40)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='alertOKCancel']/center/button[text()='Cancel']")));
         connectCancel.click();
     }
 }

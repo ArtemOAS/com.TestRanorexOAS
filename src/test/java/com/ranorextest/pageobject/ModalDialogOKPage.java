@@ -16,8 +16,6 @@ public class ModalDialogOKPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    ModalDialogOKPage(){}
-
     @FindBy(xpath = "//button[contains(text(),'OK')]")
     WebElement confirmIncorrectFilling;
     public void confirmIncorrectFilling(){

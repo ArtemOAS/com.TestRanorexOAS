@@ -12,7 +12,6 @@ import org.junit.Assert;
  */
 public class LoadUsersSteps {
 
-
     @Given("User opens the homepage")
     public void getUrlHome(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());

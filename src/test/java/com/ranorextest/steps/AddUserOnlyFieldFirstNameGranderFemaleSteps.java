@@ -16,9 +16,15 @@ import java.util.Set;
  * Created by Тёма on 29.12.2014.
  */
 public class AddUserOnlyFieldFirstNameGranderFemaleSteps {
+    @Given("User opens the homepage")
+    public void getUrlHome(){
+        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
+        homePage.getUrlHome();
+    }
 
     @When("Enter user female first name")
-    public void enterFirstName(@Named("$firstName")String firstName){
+    public void enterFirstName(@Named("firstName") String firstName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
         homePage.enterFirstName.sendKeys(firstName);
     }
@@ -45,7 +51,6 @@ public class AddUserOnlyFieldFirstNameGranderFemaleSteps {
         String newAdwinID = itererator.next();
         WebDriverFactory.getWebDriver().switchTo().window(newAdwinID);
         modalDialogOKPage.confirmIncorrectFilling();
-        WebDriverFactory.getWebDriver().close();
         WebDriverFactory.getWebDriver().switchTo().window(mainWinID);
     }
 

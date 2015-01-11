@@ -3,6 +3,7 @@ package com.ranorextest.steps;
 import com.ranorextest.pageobject.ModalDialogOKPage;
 import com.ranorextest.webdriver.WebDriverFactory;
 import com.ranorextest.pageobject.HomePage;
+import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
@@ -16,8 +17,15 @@ import java.util.Set;
  */
 public class AddUserOnlyFieldFirstNameGranderMaleSteps {
 
+    @Given("User opens the homepage")
+    public void getUrlHome(){
+        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
+        homePage.getUrlHome();
+    }
+
     @When("Enter user male first name")
-    public void enterFirstName(@Named("$firstName")String firstName){
+    public void enterFirstName(@Named("firstName") String firstName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 
         homePage.enterFirstName.sendKeys(firstName);

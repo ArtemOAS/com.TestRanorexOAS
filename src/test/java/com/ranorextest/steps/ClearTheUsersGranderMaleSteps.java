@@ -3,6 +3,7 @@ package com.ranorextest.steps;
 import com.ranorextest.Category;
 import com.ranorextest.webdriver.WebDriverFactory;
 import com.ranorextest.pageobject.HomePage;
+import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
@@ -12,6 +13,13 @@ import org.junit.Assert;
  * Created by Тёма on 28.12.2014.
  */
 public class ClearTheUsersGranderMaleSteps {
+
+    @Given("User opens the homepage")
+    public void getUrlHome(){
+        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
+        homePage.getUrlHome();
+    }
 
     @When("Adds a user using gender male")
     public void chooseCategories(@Named("firstName") String firstName, @Named("lastName") String lastName) {

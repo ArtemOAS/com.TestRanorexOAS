@@ -3,6 +3,7 @@ package com.ranorextest.steps;
 import com.ranorextest.pageobject.ModalDialogOKCancelPage;
 import com.ranorextest.webdriver.WebDriverFactory;
 import com.ranorextest.pageobject.HomePage;
+import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;
@@ -15,6 +16,19 @@ import java.util.Set;
  */
 public class ConfirmConnectSteps {
 
+    @Given("User opens the homepage")
+    public void getUrlHome(){
+        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
+        homePage.getUrlHome();
+    }
+
+    @When("That would disconnect from the database, click to disconnect")
+    public void disconnect(){
+        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
+        homePage.disconnect();
+    }
 
     @When("That would connect from the database, click to connect")
     public void connect(){

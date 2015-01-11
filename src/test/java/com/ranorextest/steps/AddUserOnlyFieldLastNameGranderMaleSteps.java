@@ -3,6 +3,7 @@ package com.ranorextest.steps;
 import com.ranorextest.pageobject.ModalDialogOKPage;
 import com.ranorextest.webdriver.WebDriverFactory;
 import com.ranorextest.pageobject.HomePage;
+import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
@@ -16,8 +17,15 @@ import java.util.Set;
  */
 public class AddUserOnlyFieldLastNameGranderMaleSteps {
 
+    @Given("User opens the homepage")
+    public void getUrlHome(){
+        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
+        homePage.getUrlHome();
+    }
+
     @When("Enter user male last name")
-    public void enterLastName(@Named("$lastName")String lastName){
+    public void enterLastName(@Named("lastName") String lastName){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 
         homePage.enterLastName.sendKeys(lastName);
@@ -47,7 +55,6 @@ public class AddUserOnlyFieldLastNameGranderMaleSteps {
         String newAdwinID = itererator.next();
         WebDriverFactory.getWebDriver().switchTo().window(newAdwinID);
         modalDialogOKPage.confirmIncorrectFilling();
-        WebDriverFactory.getWebDriver().close();
         WebDriverFactory.getWebDriver().switchTo().window(mainWinID);
     }
 

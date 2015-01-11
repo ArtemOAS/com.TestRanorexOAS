@@ -24,11 +24,9 @@ public class CancelOfConnectSteps {
     }
 
     @When("That would disconnect from the database, click to disconnect")
-    public void disconnect() throws InterruptedException {
+    public void disconnect(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
-        Thread.sleep(5000);
         homePage.disconnect();
-        Thread.sleep(5000);
     }
 
     @When("That would connect from the database, click to connect")
@@ -54,7 +52,6 @@ public class CancelOfConnectSteps {
     @Then("Database connection offline")
     public void connected(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
-
         //Assert.assertTrue("connected", homePage.checkConnect.isDisplayed());
     }
 }

@@ -28,8 +28,6 @@ public class HomePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    HomePage(){}
-
     public void getUrlHome(){
         webDriver.get(URL_HOME);
     }
@@ -49,7 +47,7 @@ public class HomePage {
 
     WebElement addUser;
     public void addUser(){
-        addUser = (new WebDriverWait(webDriver,10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='Add']")));
+        addUser = (new WebDriverWait(webDriver,30)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='Add']")));
         addUser.click();
     }
 

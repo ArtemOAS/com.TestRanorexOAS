@@ -2,6 +2,7 @@ package com.ranorextest.steps;
 
 import com.ranorextest.webdriver.WebDriverFactory;
 import com.ranorextest.pageobject.HomePage;
+import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;
@@ -11,11 +12,11 @@ import org.junit.Assert;
  */
 public class DisconnectSteps {
 
-    @When("That would connect from the database, click to connect")
-    public void connect(){
+    @Given("User opens the homepage")
+    public void getUrlHome(){
         HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
 
-        homePage.connect();
+        homePage.getUrlHome();
     }
 
     @When("Disconnect from the database")

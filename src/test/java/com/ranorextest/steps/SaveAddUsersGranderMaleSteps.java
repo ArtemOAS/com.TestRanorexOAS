@@ -4,6 +4,7 @@ import com.ranorextest.Category;
 import com.ranorextest.pageobject.ModalDialogOKPage;
 import com.ranorextest.webdriver.WebDriverFactory;
 import com.ranorextest.pageobject.HomePage;
+import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
@@ -16,6 +17,13 @@ import java.util.Set;
  * Created by Тёма on 29.12.2014.
  */
 public class SaveAddUsersGranderMaleSteps {
+
+    @Given("User opens the homepage")
+    public void getUrlHome(){
+        HomePage homePage = new HomePage(WebDriverFactory.getWebDriver());
+
+        homePage.getUrlHome();
+    }
 
     @When("Add user with grander male")
     public void chooseCategories(@Named("firstName") String firstName, @Named("lastName") String lastName){
